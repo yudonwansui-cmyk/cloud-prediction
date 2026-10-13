@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0-public",
+  "build_time_utc": "2026-10-13T05:40:42.448459+00:00",
+  "frozen_registry_sha256": "8b02df9fb381dbd3956339acca11b6fe923e9c886fd820abb0b1802c8dae6fe4",
+  "feature_dictionary_sha256": "b5beebb2b961559fe253c19061b551502b65eb684e6423e5600b26cde6e2d1bc",
+  "feature_count": 106,
+  "evidence_status_counts": {
+    "VERIFIED": 106
+  },
+  "publication_status": "PUBLIC_GITHUB_REPOSITORY",
+  "repository_url": "https://github.com/yudonwansui-cmyk/cloud-prediction",
+  "rights_status": "ALL_RIGHTS_RESERVED",
+  "upstream_static_classification_clouds": 1013,
+  "upstream_static_classification_used_test_covariates": true
+}

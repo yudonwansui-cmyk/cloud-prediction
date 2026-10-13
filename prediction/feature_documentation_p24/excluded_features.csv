@@ -1,0 +1,2 @@
+﻿feature_name,original_registry,excluded_from,reason,evidence_file,evidence_location
+normalized_sequence_time,afd_py/ml_full_cohort_v3/phase3_prediction_v2/03_feature_registry/phase3_feature_registry_v2.csv,afd_py/ml_full_cohort_v3/phase3_prediction_v2/24_causal_probability_full_models_20261009/00_protocol/authorized_feature_registry.csv,"Computed using completed sequence time_end_s, unavailable at anchor t",afd_py/ml_full_cohort_v3/build_phase3_prelaunch_v2.py,"stage_p2, line 449; P24 preflight, lines 69–94"
