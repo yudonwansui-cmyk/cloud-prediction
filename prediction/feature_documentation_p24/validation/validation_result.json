@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "checks": {
+    "106_unique": true,
+    "98_numeric_8_categorical": true,
+    "seven_groups": true,
+    "group_mapping_exact": true,
+    "excluded_only_sequence_time": true,
+    "dictionary_sha256": true,
+    "relative_paths": true
+  }
+}
