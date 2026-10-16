@@ -1,107 +1,107 @@
-﻿feature_name,physical_group,group_description_zh,group_description_en
-direction,G2,运动方向,Motion direction
-cloud_area_ratio,G1,云形态,Cloud morphology
-edge_complexity,G1,云形态,Cloud morphology
-largest_component_area_ratio,G1,云形态,Cloud morphology
-area_class,G1,云形态,Cloud morphology
-complexity_class,G1,云形态,Cloud morphology
-fragmentation_class,G1,云形态,Cloud morphology
-cloud_type,G1,云形态,Cloud morphology
-shading_ratio,G3,几何遮挡状态,Geometric shading state
-shadow_ratio_dt,G3,几何遮挡状态,Geometric shading state
-newly_shaded_ratio,G3,几何遮挡状态,Geometric shading state
-newly_recovered_ratio,G3,几何遮挡状态,Geometric shading state
-P_rec,G4,接收器功率与损失,Receiver power and loss
-P_loss,G4,接收器功率与损失,Receiver power and loss
-afd_violation_ratio,G6,AFD违规状态,AFD violation state
-q_max,G5,通量形状与热点状态,Flux shape and hotspot state
-panel_q_std_max,G5,通量形状与热点状态,Flux shape and hotspot state
-frame_panel_q_mean_dt_abs_max,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_positive_max,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_negative_magnitude_max,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_dt_p95_abs,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_dt_std,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_peak_abs_panel_id,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_peak_recovery_panel_id,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_peak_drop_panel_id,G7,通量斜率与近期变化,Flux slopes and recent transitions
-shading_ratio_mean_trailing20s,G3,几何遮挡状态,Geometric shading state
-shading_ratio_std_trailing20s,G3,几何遮挡状态,Geometric shading state
-shading_ratio_min_trailing20s,G3,几何遮挡状态,Geometric shading state
-shading_ratio_max_trailing20s,G3,几何遮挡状态,Geometric shading state
-shading_ratio_range_trailing20s,G3,几何遮挡状态,Geometric shading state
-shading_ratio_delta_trailing20s,G3,几何遮挡状态,Geometric shading state
-shading_ratio_trend_trailing20s,G3,几何遮挡状态,Geometric shading state
-shading_ratio_recent4_mean_trailing20s,G3,几何遮挡状态,Geometric shading state
-shading_ratio_recent8_mean_trailing20s,G3,几何遮挡状态,Geometric shading state
-shadow_ratio_dt_mean_trailing20s,G3,几何遮挡状态,Geometric shading state
-shadow_ratio_dt_std_trailing20s,G3,几何遮挡状态,Geometric shading state
-shadow_ratio_dt_min_trailing20s,G3,几何遮挡状态,Geometric shading state
-shadow_ratio_dt_max_trailing20s,G3,几何遮挡状态,Geometric shading state
-shadow_ratio_dt_range_trailing20s,G3,几何遮挡状态,Geometric shading state
-shadow_ratio_dt_delta_trailing20s,G3,几何遮挡状态,Geometric shading state
-shadow_ratio_dt_trend_trailing20s,G3,几何遮挡状态,Geometric shading state
-shadow_ratio_dt_recent4_mean_trailing20s,G3,几何遮挡状态,Geometric shading state
-shadow_ratio_dt_recent8_mean_trailing20s,G3,几何遮挡状态,Geometric shading state
-P_loss_mean_trailing20s,G4,接收器功率与损失,Receiver power and loss
-P_loss_std_trailing20s,G4,接收器功率与损失,Receiver power and loss
-P_loss_min_trailing20s,G4,接收器功率与损失,Receiver power and loss
-P_loss_max_trailing20s,G4,接收器功率与损失,Receiver power and loss
-P_loss_range_trailing20s,G4,接收器功率与损失,Receiver power and loss
-P_loss_delta_trailing20s,G4,接收器功率与损失,Receiver power and loss
-P_loss_trend_trailing20s,G4,接收器功率与损失,Receiver power and loss
-P_loss_recent4_mean_trailing20s,G4,接收器功率与损失,Receiver power and loss
-P_loss_recent8_mean_trailing20s,G4,接收器功率与损失,Receiver power and loss
-afd_violation_ratio_mean_trailing20s,G6,AFD违规状态,AFD violation state
-afd_violation_ratio_std_trailing20s,G6,AFD违规状态,AFD violation state
-afd_violation_ratio_min_trailing20s,G6,AFD违规状态,AFD violation state
-afd_violation_ratio_max_trailing20s,G6,AFD违规状态,AFD violation state
-afd_violation_ratio_range_trailing20s,G6,AFD违规状态,AFD violation state
-afd_violation_ratio_delta_trailing20s,G6,AFD违规状态,AFD violation state
-afd_violation_ratio_trend_trailing20s,G6,AFD违规状态,AFD violation state
-afd_violation_ratio_recent4_mean_trailing20s,G6,AFD违规状态,AFD violation state
-afd_violation_ratio_recent8_mean_trailing20s,G6,AFD违规状态,AFD violation state
-q_max_mean_trailing20s,G5,通量形状与热点状态,Flux shape and hotspot state
-q_max_std_trailing20s,G5,通量形状与热点状态,Flux shape and hotspot state
-q_max_min_trailing20s,G5,通量形状与热点状态,Flux shape and hotspot state
-q_max_max_trailing20s,G5,通量形状与热点状态,Flux shape and hotspot state
-q_max_range_trailing20s,G5,通量形状与热点状态,Flux shape and hotspot state
-q_max_delta_trailing20s,G5,通量形状与热点状态,Flux shape and hotspot state
-q_max_trend_trailing20s,G5,通量形状与热点状态,Flux shape and hotspot state
-q_max_recent4_mean_trailing20s,G5,通量形状与热点状态,Flux shape and hotspot state
-q_max_recent8_mean_trailing20s,G5,通量形状与热点状态,Flux shape and hotspot state
-panel_q_std_max_mean_trailing20s,G5,通量形状与热点状态,Flux shape and hotspot state
-panel_q_std_max_std_trailing20s,G5,通量形状与热点状态,Flux shape and hotspot state
-panel_q_std_max_min_trailing20s,G5,通量形状与热点状态,Flux shape and hotspot state
-panel_q_std_max_max_trailing20s,G5,通量形状与热点状态,Flux shape and hotspot state
-panel_q_std_max_range_trailing20s,G5,通量形状与热点状态,Flux shape and hotspot state
-panel_q_std_max_delta_trailing20s,G5,通量形状与热点状态,Flux shape and hotspot state
-panel_q_std_max_trend_trailing20s,G5,通量形状与热点状态,Flux shape and hotspot state
-panel_q_std_max_recent4_mean_trailing20s,G5,通量形状与热点状态,Flux shape and hotspot state
-panel_q_std_max_recent8_mean_trailing20s,G5,通量形状与热点状态,Flux shape and hotspot state
-frame_panel_q_mean_dt_abs_max_mean_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_abs_max_std_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_abs_max_min_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_abs_max_max_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_abs_max_range_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_abs_max_delta_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_abs_max_trend_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_abs_max_recent4_mean_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_abs_max_recent8_mean_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_positive_max_mean_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_positive_max_std_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_positive_max_min_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_positive_max_max_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_positive_max_range_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_positive_max_delta_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_positive_max_trend_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_positive_max_recent4_mean_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_positive_max_recent8_mean_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_negative_magnitude_max_mean_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_negative_magnitude_max_std_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_negative_magnitude_max_min_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_negative_magnitude_max_max_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_negative_magnitude_max_range_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_negative_magnitude_max_delta_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_negative_magnitude_max_trend_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_negative_magnitude_max_recent4_mean_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
-frame_panel_q_mean_dt_negative_magnitude_max_recent8_mean_trailing20s,G7,通量斜率与近期变化,Flux slopes and recent transitions
+feature_name,physical_group,group_description_en
+direction,G2,Motion direction
+cloud_area_ratio,G1,Cloud morphology
+edge_complexity,G1,Cloud morphology
+largest_component_area_ratio,G1,Cloud morphology
+area_class,G1,Cloud morphology
+complexity_class,G1,Cloud morphology
+fragmentation_class,G1,Cloud morphology
+cloud_type,G1,Cloud morphology
+shading_ratio,G3,Geometric shading state
+shadow_ratio_dt,G3,Geometric shading state
+newly_shaded_ratio,G3,Geometric shading state
+newly_recovered_ratio,G3,Geometric shading state
+P_rec,G4,Receiver power and loss
+P_loss,G4,Receiver power and loss
+afd_violation_ratio,G6,AFD violation state
+q_max,G5,Flux shape and hotspot state
+panel_q_std_max,G5,Flux shape and hotspot state
+frame_panel_q_mean_dt_abs_max,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_positive_max,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_negative_magnitude_max,G7,Flux slopes and recent transitions
+frame_panel_q_dt_p95_abs,G7,Flux slopes and recent transitions
+frame_panel_q_dt_std,G7,Flux slopes and recent transitions
+frame_peak_abs_panel_id,G7,Flux slopes and recent transitions
+frame_peak_recovery_panel_id,G7,Flux slopes and recent transitions
+frame_peak_drop_panel_id,G7,Flux slopes and recent transitions
+shading_ratio_mean_trailing20s,G3,Geometric shading state
+shading_ratio_std_trailing20s,G3,Geometric shading state
+shading_ratio_min_trailing20s,G3,Geometric shading state
+shading_ratio_max_trailing20s,G3,Geometric shading state
+shading_ratio_range_trailing20s,G3,Geometric shading state
+shading_ratio_delta_trailing20s,G3,Geometric shading state
+shading_ratio_trend_trailing20s,G3,Geometric shading state
+shading_ratio_recent4_mean_trailing20s,G3,Geometric shading state
+shading_ratio_recent8_mean_trailing20s,G3,Geometric shading state
+shadow_ratio_dt_mean_trailing20s,G3,Geometric shading state
+shadow_ratio_dt_std_trailing20s,G3,Geometric shading state
+shadow_ratio_dt_min_trailing20s,G3,Geometric shading state
+shadow_ratio_dt_max_trailing20s,G3,Geometric shading state
+shadow_ratio_dt_range_trailing20s,G3,Geometric shading state
+shadow_ratio_dt_delta_trailing20s,G3,Geometric shading state
+shadow_ratio_dt_trend_trailing20s,G3,Geometric shading state
+shadow_ratio_dt_recent4_mean_trailing20s,G3,Geometric shading state
+shadow_ratio_dt_recent8_mean_trailing20s,G3,Geometric shading state
+P_loss_mean_trailing20s,G4,Receiver power and loss
+P_loss_std_trailing20s,G4,Receiver power and loss
+P_loss_min_trailing20s,G4,Receiver power and loss
+P_loss_max_trailing20s,G4,Receiver power and loss
+P_loss_range_trailing20s,G4,Receiver power and loss
+P_loss_delta_trailing20s,G4,Receiver power and loss
+P_loss_trend_trailing20s,G4,Receiver power and loss
+P_loss_recent4_mean_trailing20s,G4,Receiver power and loss
+P_loss_recent8_mean_trailing20s,G4,Receiver power and loss
+afd_violation_ratio_mean_trailing20s,G6,AFD violation state
+afd_violation_ratio_std_trailing20s,G6,AFD violation state
+afd_violation_ratio_min_trailing20s,G6,AFD violation state
+afd_violation_ratio_max_trailing20s,G6,AFD violation state
+afd_violation_ratio_range_trailing20s,G6,AFD violation state
+afd_violation_ratio_delta_trailing20s,G6,AFD violation state
+afd_violation_ratio_trend_trailing20s,G6,AFD violation state
+afd_violation_ratio_recent4_mean_trailing20s,G6,AFD violation state
+afd_violation_ratio_recent8_mean_trailing20s,G6,AFD violation state
+q_max_mean_trailing20s,G5,Flux shape and hotspot state
+q_max_std_trailing20s,G5,Flux shape and hotspot state
+q_max_min_trailing20s,G5,Flux shape and hotspot state
+q_max_max_trailing20s,G5,Flux shape and hotspot state
+q_max_range_trailing20s,G5,Flux shape and hotspot state
+q_max_delta_trailing20s,G5,Flux shape and hotspot state
+q_max_trend_trailing20s,G5,Flux shape and hotspot state
+q_max_recent4_mean_trailing20s,G5,Flux shape and hotspot state
+q_max_recent8_mean_trailing20s,G5,Flux shape and hotspot state
+panel_q_std_max_mean_trailing20s,G5,Flux shape and hotspot state
+panel_q_std_max_std_trailing20s,G5,Flux shape and hotspot state
+panel_q_std_max_min_trailing20s,G5,Flux shape and hotspot state
+panel_q_std_max_max_trailing20s,G5,Flux shape and hotspot state
+panel_q_std_max_range_trailing20s,G5,Flux shape and hotspot state
+panel_q_std_max_delta_trailing20s,G5,Flux shape and hotspot state
+panel_q_std_max_trend_trailing20s,G5,Flux shape and hotspot state
+panel_q_std_max_recent4_mean_trailing20s,G5,Flux shape and hotspot state
+panel_q_std_max_recent8_mean_trailing20s,G5,Flux shape and hotspot state
+frame_panel_q_mean_dt_abs_max_mean_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_abs_max_std_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_abs_max_min_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_abs_max_max_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_abs_max_range_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_abs_max_delta_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_abs_max_trend_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_abs_max_recent4_mean_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_abs_max_recent8_mean_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_positive_max_mean_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_positive_max_std_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_positive_max_min_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_positive_max_max_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_positive_max_range_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_positive_max_delta_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_positive_max_trend_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_positive_max_recent4_mean_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_positive_max_recent8_mean_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_negative_magnitude_max_mean_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_negative_magnitude_max_std_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_negative_magnitude_max_min_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_negative_magnitude_max_max_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_negative_magnitude_max_range_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_negative_magnitude_max_delta_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_negative_magnitude_max_trend_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_negative_magnitude_max_recent4_mean_trailing20s,G7,Flux slopes and recent transitions
+frame_panel_q_mean_dt_negative_magnitude_max_recent8_mean_trailing20s,G7,Flux slopes and recent transitions

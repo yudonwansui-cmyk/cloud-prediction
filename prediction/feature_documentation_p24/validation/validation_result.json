@@ -8,8 +8,7 @@
     "seven_groups": true,
     "group_mapping_exact": true,
     "group_mapping_labels": true,
-    "source_tier_counts": true,
-    "source_tier_alias": true,
+    "feature_tier_counts": true,
     "first_included_tier": true,
     "cumulative_tier_counts": true,
     "81_history_9_bases_9_operators": true,
@@ -17,13 +16,10 @@
     "history_formula_references": true,
     "missingness_fields_present": true,
     "excluded_only_sequence_time": true,
-    "trace_coverage": true,
-    "trace_assignments": true,
     "dictionary_sha256": true,
-    "relative_paths": true,
     "schema_counts": true,
     "cohort_metadata": true,
-    "classification_provenance_preserved": true,
+    "classification_population": true,
     "sequence_shape": true,
     "25_ordered_unique_channels": true,
     "channel_roles": true,
@@ -36,6 +32,9 @@
     "selected_feature_names_and_groups": true,
     "selected_sequence_indices": true,
     "static_channel_index_empty": true,
-    "schema_selection_scope": true
+    "schema_selection_scope": true,
+    "implementation_provenance_absent": true,
+    "english_only_content": true,
+    "language_metadata": true
   }
 }

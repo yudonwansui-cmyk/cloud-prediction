@@ -1,44 +1,26 @@
 {
   "schema_version": "1.1.0-draft",
-  "build_time_utc": "2026-10-16T06:39:42.322117+00:00",
-  "frozen_registry_sha256": "8b02df9fb381dbd3956339acca11b6fe923e9c886fd820abb0b1802c8dae6fe4",
-  "feature_dictionary_sha256": "1f0097f0de6f7460ce6b4178845e9dcd181cb62e45ae92eefb5fa3b888afafab",
+  "build_time_utc": "2026-10-16T07:09:06.435556+00:00",
+  "feature_dictionary_sha256": "dac305a3efaf717ad9ed92efb1989e36848696d41011d64a4afdc5198cb54f59",
   "feature_count": 106,
-  "evidence_status_counts": {
-    "VERIFIED": 106
-  },
   "publication_status": "GITHUB_REVIEW_DRAFT",
   "repository_url": "https://github.com/yudonwansui-cmyk/cloud-prediction",
   "rights_status": "ALL_RIGHTS_RESERVED",
-  "upstream_static_classification_clouds": 1013,
-  "upstream_static_classification_used_test_covariates": true,
-  "source_commit": "f72d446a5c3d985f60c0acad47d31bb1cd0c44d8",
-  "previous_feature_dictionary_sha256": "b5beebb2b961559fe253c19061b551502b65eb684e6423e5600b26cde6e2d1bc",
-  "revision_scope": "Documentation schema and labels only; no upstream calculations or fitted models changed.",
+  "revision_scope": "English-only documentation; implementation provenance removed. Feature calculations and model inputs are unchanged.",
   "cohort_terminology": {
     "development_cohort": {
       "cloud_count": 810,
-      "label_en": "development cohort",
-      "label_zh": "开发队列"
+      "label_en": "development cohort"
     },
     "descriptive_evaluation_cohort": {
       "cloud_count": 203,
       "label_en": "descriptive evaluation cohort",
-      "label_zh": "描述性评估队列",
       "previously_used_in_research": true
     },
     "full_cloud_cohort": {
       "cloud_count": 1013,
-      "label_en": "full cloud cohort",
-      "label_zh": "全部云样本队列"
+      "label_en": "full cloud cohort"
     }
-  },
-  "source_tier_counts": {
-    "A0": 8,
-    "A1": 4,
-    "A2": 8,
-    "A3": 81,
-    "A4": 5
   },
   "cumulative_tier_counts": {
     "T0": 8,
@@ -68,9 +50,15 @@
     },
     "final_development_refit": false
   },
-  "legacy_fields": {
-    "feature_tier": "Compatibility alias for source_tier (A0–A4).",
-    "missing_handling": "Compatibility pointer to raw_missing_rule and imputation_rule."
+  "feature_tier_counts": {
+    "A0": 8,
+    "A1": 4,
+    "A2": 8,
+    "A3": 81,
+    "A4": 5
   },
-  "evidence_status_scope": "Inherited from previous source audit; not independently re-audited against upstream code in this revision."
+  "classification_population_clouds": 1013,
+  "classification_used_evaluation_covariates": true,
+  "documentation_language": "en",
+  "implementation_provenance_included": false
 }

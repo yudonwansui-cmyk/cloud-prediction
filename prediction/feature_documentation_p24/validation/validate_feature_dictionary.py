@@ -4,10 +4,10 @@ from collections import Counter, defaultdict
 import csv
 import hashlib
 import json
-from pathlib import Path, PurePosixPath, PureWindowsPath
+from pathlib import Path
 import re
 
-SOURCE_COUNTS = {'A0': 8, 'A1': 4, 'A2': 8, 'A3': 81, 'A4': 5}
+TIER_COUNTS = {'A0': 8, 'A1': 4, 'A2': 8, 'A3': 81, 'A4': 5}
 CUMULATIVE_COUNTS = {'T0': 8, 'T1': 12, 'T2': 20, 'T3': 101, 'T4': 106}
 VALUE_NAMES = [
     'shading_ratio', 'shadow_ratio_dt', 'newly_shaded_ratio', 'newly_recovered_ratio',
@@ -28,7 +28,6 @@ def validate(root):
     dictionary = read_rows(root, 'feature_dictionary_p24_106.csv')
     groups = read_rows(root, 'feature_group_mapping_p24.csv')
     excluded = read_rows(root, 'excluded_features.csv')
-    traces = read_rows(root, 'feature_source_trace_public.csv')
     channels = read_rows(root, 'sequence_channel_dictionary_25.csv')
     selections = read_rows(root, 'selected_features_by_model_fold.csv')
     schema = json.loads((root / 'schema_and_version.json').read_text(encoding='utf-8'))
@@ -40,14 +39,13 @@ def validate(root):
     checks['98_numeric_8_categorical'] = Counter(r['data_type'] for r in dictionary) == {'numeric': 98, 'categorical': 8}
     checks['seven_groups'] = {r['physical_group'] for r in dictionary} == {f'G{i}' for i in range(1, 8)}
     checks['group_mapping_exact'] = len(groups) == len({r['feature_name'] for r in groups}) == 106 and {r['feature_name'] for r in groups} == names
-    checks['group_mapping_labels'] = all(r['feature_name'] in by_name and all(r[key] == by_name[r['feature_name']][key] for key in ('physical_group', 'group_description_zh', 'group_description_en')) for r in groups)
-    checks['source_tier_counts'] = Counter(r['source_tier'] for r in dictionary) == SOURCE_COUNTS
-    checks['source_tier_alias'] = all(r['source_tier'] == r['feature_tier'] for r in dictionary)
-    checks['first_included_tier'] = all(r['source_tier'] in SOURCE_COUNTS and r['first_included_tier'] == 'T' + r['source_tier'][1:] for r in dictionary)
+    checks['group_mapping_labels'] = all(r['feature_name'] in by_name and all(r[key] == by_name[r['feature_name']][key] for key in ('physical_group', 'group_description_en')) for r in groups)
+    checks['feature_tier_counts'] = Counter(r['feature_tier'] for r in dictionary) == TIER_COUNTS
+    checks['first_included_tier'] = all(r['feature_tier'] in TIER_COUNTS and r['first_included_tier'] == 'T' + r['feature_tier'][1:] for r in dictionary)
     checks['cumulative_tier_counts'] = all(sum(r['first_included_tier'] <= tier for r in dictionary) == count for tier, count in CUMULATIVE_COUNTS.items())
     history = defaultdict(list)
     for row in dictionary:
-        if row['source_tier'] == 'A3':
+        if row['feature_tier'] == 'A3':
             history[row['base_quantity']].append(row)
     checks['81_history_9_bases_9_operators'] = len(history) == 9 and all(len(items) == 9 and {r['transform_operator'] for r in items} == OPERATORS for items in history.values())
     checks['history_formula_ids'] = all(r['formula_id'] == 'H20_' + r['transform_operator'].upper() for items in history.values() for r in items)
@@ -55,18 +53,10 @@ def validate(root):
     checks['history_formula_references'] = all(r['formula_id'] in formula_text for items in history.values() for r in items)
     checks['missingness_fields_present'] = all(r['raw_missing_rule'].strip() and r['imputation_rule'].strip() and 'raw_missing_rule' in r['missing_handling'] and 'imputation_rule' in r['missing_handling'] for r in dictionary)
     checks['excluded_only_sequence_time'] = len(excluded) == 1 and excluded[0]['feature_name'] == 'normalized_sequence_time' and 'normalized_sequence_time' not in names
-    checks['trace_coverage'] = len(traces) == len({r['feature_name'] for r in traces}) == 106 and {r['feature_name'] for r in traces} == names
-    trace_keys = {'formula_id': 'formula_id', 'upstream_column': 'upstream_column',
-                  'upstream_file': 'upstream_source_file', 'upstream_location': 'upstream_source_function_or_line',
-                  'assignment_file': 'source_file', 'assignment_location': 'source_function_or_line',
-                  'evidence_status': 'evidence_status'}
-    checks['trace_assignments'] = all(r['feature_name'] in by_name and all(r[left] == by_name[r['feature_name']][right] for left, right in trace_keys.items()) for r in traces)
     checks['dictionary_sha256'] = hashlib.sha256((root / 'feature_dictionary_p24_106.csv').read_bytes()).hexdigest() == schema['feature_dictionary_sha256']
-    source_paths = [r[key] for r in dictionary for key in ('source_file', 'upstream_source_file')]
-    checks['relative_paths'] = all(p and not PureWindowsPath(p).drive and not PureWindowsPath(p).is_absolute() and not PurePosixPath(p).is_absolute() and '..' not in PurePosixPath(p.replace('\\', '/')).parts for p in source_paths)
-    checks['schema_counts'] = schema['feature_count'] == 106 and schema['source_tier_counts'] == SOURCE_COUNTS and schema['cumulative_tier_counts'] == CUMULATIVE_COUNTS and schema['evidence_status_counts'] == dict(Counter(r['evidence_status'] for r in dictionary))
+    checks['schema_counts'] = schema['feature_count'] == 106 and schema['feature_tier_counts'] == TIER_COUNTS and schema['cumulative_tier_counts'] == CUMULATIVE_COUNTS
     checks['cohort_metadata'] = {key: value['cloud_count'] for key, value in schema['cohort_terminology'].items()} == {'development_cohort': 810, 'descriptive_evaluation_cohort': 203, 'full_cloud_cohort': 1013} and schema['cohort_terminology']['descriptive_evaluation_cohort']['previously_used_in_research'] is True
-    checks['classification_provenance_preserved'] = schema['upstream_static_classification_clouds'] == 1013 and schema['upstream_static_classification_used_test_covariates'] is True
+    checks['classification_population'] = schema['classification_population_clouds'] == 1013 and schema['classification_used_evaluation_covariates'] is True
     checks['sequence_shape'] = schema['sequence_shape'] == [11, 25] and schema['sequence_channel_index_base'] == 0
     checks['25_ordered_unique_channels'] = [r['channel_index'] for r in channels] == [str(i) for i in range(25)] and len({r['channel_name'] for r in channels}) == 25
     checks['channel_roles'] = [r['channel_role'] for r in channels] == ['value'] * 12 + ['missing_indicator'] * 12 + ['observed_time_mask']
@@ -88,6 +78,22 @@ def validate(root):
     checks['static_channel_index_empty'] = all(r['channel_index'] == '' for r in selections if r['input_branch'] == 'static')
     scope = schema['selected_input_scope']
     checks['schema_selection_scope'] = scope['repeat'] == 0 and scope['outer_folds'] == list(range(5)) and scope['endpoint_models'] == ENDPOINT_MODELS and scope['final_development_refit'] is False
+    forbidden = {
+        'source_tier', 'source_file', 'source_function_or_line', 'upstream_column',
+        'upstream_source_file', 'upstream_source_function_or_line', 'evidence_status',
+        'original_registry', 'excluded_from', 'evidence_file', 'evidence_location',
+    }
+    tables = [dictionary, groups, excluded, channels, selections]
+    checks['implementation_provenance_absent'] = not (root / 'feature_source_trace_public.csv').exists() and all(
+        not forbidden.intersection(row) and not any(key.endswith('_zh') for key in row)
+        for table in tables for row in table)
+    checks['english_only_content'] = all(
+        re.search(r'[\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff\u3040-\u30ff\uac00-\ud7af]',
+                  path.read_text(encoding='utf-8-sig')) is None
+        for path in [root.parent.parent / 'README.md', *root.rglob('*')]
+        if path.is_file() and path.suffix in {'.md', '.csv', '.json', '.py'})
+    checks['language_metadata'] = schema['documentation_language'] == 'en' and schema['implementation_provenance_included'] is False and all(
+        'label_zh' not in cohort for cohort in schema['cohort_terminology'].values())
     return {'status': 'PASS' if all(checks.values()) else 'FAIL',
             'validation_scope': 'Public documentation consistency only; no upstream numerical or private-registry audit.',
             'checks': checks}
