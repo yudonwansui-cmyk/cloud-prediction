@@ -1,7 +1,5 @@
 # Cloud-shadow prediction: candidate feature dictionary and input specification
 
-**Version 1.1.0.**
-
 Definitions for the **106 candidate tabular predictors**, feature tiers, missingness rules, and the separate **11 × 25 sequence input** are in [prediction/feature_documentation/](prediction/feature_documentation/).
 
 The study comprises a **development cohort (810 clouds)** and a **descriptive evaluation cohort (203 clouds)**, together the **full cloud cohort (1013 clouds)**. The 203-cloud cohort had been used in earlier research and is not an untouched independent test. Static cloud-class cutoffs were calculated using all 1013 masks before the split.
