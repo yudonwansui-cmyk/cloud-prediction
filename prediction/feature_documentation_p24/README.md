@@ -1,6 +1,6 @@
 # Cloud-shadow prediction: candidate feature dictionary and input specification
 
-**Version 1.1.0 draft — proposed documentation revision.**
+**Version 1.1.0.**
 
 This package documents **106 candidate tabular predictors** for cloud-shadow short-horizon risk prediction using 20 s of causal history and a 6 s future onset horizon. P24 identifies the frozen prediction protocol.
 
@@ -83,4 +83,4 @@ Use the [feature dictionary link](https://github.com/yudonwansui-cmyk/cloud-pred
 
 > The candidate feature dictionary and input specifications are available at [GitHub](https://github.com/yudonwansui-cmyk/cloud-prediction/tree/main/prediction/feature_documentation_p24).
 
-The default-branch link will serve this revision after the pull request is merged.
+The link points to the documentation on the default branch.

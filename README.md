@@ -1,6 +1,6 @@
 # Cloud-shadow prediction: candidate feature dictionary and input specification
 
-**Review draft, version 1.1.0.**
+**Version 1.1.0.**
 
 Definitions for the **106 candidate tabular predictors**, feature tiers, missingness rules, and the separate **11 × 25 sequence input** are in [prediction/feature_documentation_p24/](prediction/feature_documentation_p24/). P24 identifies the frozen prediction protocol.
 

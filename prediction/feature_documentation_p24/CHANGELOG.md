@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.1.0 — review draft, 2026-10-16
+## 1.1.0 — 2026-10-16
 
 - Use English throughout the documentation, CSV files, metadata, and pull request description.
 - Remove Chinese description columns and notes.

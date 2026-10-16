@@ -1,9 +1,9 @@
 {
-  "schema_version": "1.1.0-draft",
-  "build_time_utc": "2026-10-16T07:09:06.435556+00:00",
+  "schema_version": "1.1.0",
+  "build_time_utc": "2026-10-16T07:23:42.815747+00:00",
   "feature_dictionary_sha256": "dac305a3efaf717ad9ed92efb1989e36848696d41011d64a4afdc5198cb54f59",
   "feature_count": 106,
-  "publication_status": "GITHUB_REVIEW_DRAFT",
+  "publication_status": "PUBLIC_GITHUB_REPOSITORY",
   "repository_url": "https://github.com/yudonwansui-cmyk/cloud-prediction",
   "rights_status": "ALL_RIGHTS_RESERVED",
   "revision_scope": "English-only documentation; implementation provenance removed. Feature calculations and model inputs are unchanged.",
