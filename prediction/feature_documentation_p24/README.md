@@ -1,26 +1,86 @@
-# P24 candidate feature documentation
+# Cloud-shadow prediction: candidate feature dictionary and input specification
 
-This package documents **106 authorized candidate table predictors** for cloud-shadow short-horizon risk prediction using 20 s of causal history and a 6 s future onset horizon. It corresponds to Supplementary Table S5. The study used 810 development clouds and a later descriptive probability test on 203 clouds that had been used in earlier research; the latter cohort must not be described as untouched.
+**Version 1.1.0.**
 
-The 106 candidates are not the features retained in every model fold. `selected_features_by_model_fold.csv` records repeat-0 outer folds, not the final 810-cloud refit. A0–A4 are source tiers, T0–T4 are cumulative training input tiers, and G1–G7 are semantic groups rather than independently manipulable causal mechanisms. The 11×25 sequence input is documented separately and does not add 25 table predictors.
+This package documents **106 candidate tabular predictors** for cloud-shadow short-horizon risk prediction using 20 s of causal history and a 6 s future onset horizon. P24 identifies the frozen prediction protocol.
 
-Files:
+## Cohorts
 
-- `feature_dictionary_p24_106.csv`: definitions, units, formula references, timing, and source traces for all 106 candidates.
-- `feature_group_mapping_p24.csv`, `excluded_features.csv`: group mapping and the sole excluded former candidate, `normalized_sequence_time`.
-- `feature_formulas.md`, `sequence_input_11x25.md`: calculation and sequence input conventions.
-- `selected_features_by_model_fold.csv`, `feature_source_trace_public.csv`: fold selection and public provenance references.
-- `schema_and_version.json`, `validation/`: frozen registry and dictionary hashes plus package checks.
-- `RIGHTS.md`, `CITATION.md`: reuse and citation status.
+| Identifier | Cohort | Clouds |
+|---|---|---:|
+| development_cohort | Development cohort | 810 |
+| descriptive_evaluation_cohort | Descriptive evaluation cohort | 203 |
+| full_cloud_cohort | Full cloud cohort | 1013 |
 
-No row-level cloud data, labels, predictions, fitted weights, or upstream source code are included. Run `python validation/validate_feature_dictionary.py` to recheck package consistency. Validation against the frozen registry additionally requires a local source checkout.
+The 203-cloud cohort had been used in earlier research. Its later probability evaluation must not be described as an untouched independent test.
 
-## Upstream classification provenance
+## Feature tiers and semantic groups
 
-The area and edge-complexity class cutoffs were calculated from static masks of all **1013** clouds before the 810/203 split. The 203-cohort covariates therefore participated in this pre-existing taxonomy, although no 203 event labels or predictions were used in this documentation audit. This limits a strict development-only preprocessing claim. Exact cutoffs and source formulas are in `feature_formulas.md`. The original 200-pixel CLI argument was not archived; stored component counts reproduce at the source default of 200 pixels.
+The 106 candidates are registered variables before training-partition redundancy filtering and categorical encoding. They are not the features retained in every model fold or the number of encoded design-matrix columns.
 
-## 中文说明
+- **A0–A4 (feature_tier)** identify the groups added to the feature hierarchy.
+- **T0–T4** identify cumulative input tiers. **first_included_tier** records where a candidate first enters; it is eligible for every higher cumulative tier before filtering.
+- **G1–G7 (physical_group)** are physical-semantic groups, not independently manipulable causal mechanisms.
 
-本包记录 P24 冻结的 106 项授权候选表格特征，以 20 秒因果历史预测未来 6 秒事件起始，对应补充材料 Table S5。810 朵云用于开发；203 朵云曾在早期研究中使用，不能称为全新未接触测试集。106 项候选不等于每折最终入模项；`selected_features_by_model_fold.csv` 仅记录 repeat 0 外折。G1–G7 为物理语义组，A0–A4 为来源层级，11×25 时序张量为另一种输入表示。本包不含逐帧数据、标签、预测或模型权重。
+| Feature tier | First included tier | Added group | Newly added | Cumulative |
+|---|---|---|---:|---:|
+| A0 | T0 | Cloud morphology and motion direction | 8 | 8 |
+| A1 | T1 | Geometric heliostat shading | 4 | 12 |
+| A2 | T2 | Current receiver state | 8 | 20 |
+| A3 | T3 | Causal historical statistics | 81 | 101 |
+| A4 | T4 | Panel-level or lag-derived variables | 5 | 106 |
 
-云面积及边界复杂度类别阈值在 810/203 划分前由全部 1013 朵云的静态掩码计算，包含 203 云的协变量。这限制了“所有预处理仅由 810 开发云拟合”的表述。
+The 81 A3 candidates comprise nine base variables with nine historical operators each. The actual window is specified by window_definition: recent4_mean and recent8_mean use 4 s and 8 s despite the trailing20s name suffix.
+
+## Dictionary and missingness
+
+Feature IDs, feature names, units, formulas, and group assignments retain their definitions.
+
+- **raw_missing_rule** describes feature construction before model imputation.
+- **imputation_rule** describes preprocessing fitted on the training partition.
+- **missing_handling** points to these two fields.
+
+The first-frame convention for shadow_ratio_dt, newly_shaded_ratio, and newly_recovered_ratio is zero. Panel flux rates are undefined at the first frame. First-frame missingness is specified for the recovery/drop panel IDs; behavior for frame_peak_abs_panel_id remains unspecified. Historical statistics omit nonfinite observations; no finite observation gives NaN, and a trend needs at least two finite observations at distinct times.
+
+Tabular imputation/encoding and sequence channel median/mean/std are fitted on the training partition only.
+
+## Sequence representation and fold inputs
+
+The separate sequence representation has **11 timepoints × 25 channels**: 12 standardized values, 12 matching missing indicators, and one observed-time mask. These channels are not added to the 106 tabular candidates.
+
+The sequence channel dictionary records zero-based indices, roles, base features, groups, and units. Labels ending in __missing and observed_time_mask are documentation labels. The base_unit field gives the physical unit before standardization.
+
+The fold table records **repeat 0, folds 0–4**, for **E1/M6 (LSTM), E2/M5, and E3/M1-v2**. It does not cover all models or the final development-cohort refit. The static branch may include historical predictors. For sequence_value rows, channel_index preserves the original index and feature_name gives the base variable name. Indicators and the time mask are not separately selected rows.
+
+## Files
+
+- [feature_dictionary_p24_106.csv](feature_dictionary_p24_106.csv): definitions, units, tiers, timing, formulas, and missingness.
+- [feature_group_mapping_p24.csv](feature_group_mapping_p24.csv): semantic groups.
+- [excluded_features.csv](excluded_features.csv): the excluded former candidate and its reason.
+- [feature_formulas.md](feature_formulas.md): calculations and preprocessing.
+- [sequence_input_11x25.md](sequence_input_11x25.md) and [sequence_channel_dictionary_25.csv](sequence_channel_dictionary_25.csv): temporal alignment and channels.
+- [selected_features_by_model_fold.csv](selected_features_by_model_fold.csv): recorded fold inputs.
+- [schema_and_version.json](schema_and_version.json) and validation/: version, dictionary hash, and package checks.
+- [CHANGELOG.md](CHANGELOG.md), [CITATION.md](CITATION.md), and [RIGHTS.md](RIGHTS.md): revision history, documentation link, and rights.
+
+## Validation
+
+From this directory, run:
+
+    python validation/validate_feature_dictionary.py
+
+The checker validates cross-file mappings, counts, formulas, channels, fold scope, English-only content, absence of implementation provenance, and the dictionary hash. It writes validation/validation_result.json. The root .gitattributes fixes the dictionary's checkout line endings to LF.
+
+Validation checks documentation consistency; it does not independently reproduce feature calculations or model training. No row-level data, labels, predictions, fitted weights, or implementation code are included.
+
+## Cloud classification
+
+Area and edge-complexity cutoffs were calculated from all **1013** static cloud masks before the 810/203 split. The descriptive evaluation cohort's covariates therefore participated in this taxonomy. This limits a strict development-only preprocessing claim. Exact cutoffs and classification rules are in [feature_formulas.md](feature_formulas.md).
+
+## Documentation link
+
+Use the [feature dictionary link](https://github.com/yudonwansui-cmyk/cloud-prediction/tree/main/prediction/feature_documentation_p24) directly in the manuscript:
+
+> The candidate feature dictionary and input specifications are available at [GitHub](https://github.com/yudonwansui-cmyk/cloud-prediction/tree/main/prediction/feature_documentation_p24).
+
+The link points to the documentation on the default branch.

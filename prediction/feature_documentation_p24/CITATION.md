@@ -1,5 +1,11 @@
-# Citation status
+# Documentation link
 
-The manuscript has no finalized title, author list, publication year, or DOI. A formal paper citation is therefore unavailable.
+Use this link directly in the manuscript:
 
-If you refer to this documentation before the manuscript metadata is finalized, identify the repository as `yudonwansui-cmyk/cloud-prediction` and specify the commit SHA or access date. Do not infer a paper DOI or publication status from this repository.
+[Cloud-shadow prediction: candidate feature dictionary and input specification](https://github.com/yudonwansui-cmyk/cloud-prediction/tree/main/prediction/feature_documentation_p24)
+
+Suggested wording:
+
+> The candidate feature dictionary and input specifications are available at [GitHub](https://github.com/yudonwansui-cmyk/cloud-prediction/tree/main/prediction/feature_documentation_p24).
+
+Version 1.1.0. The link points to the documentation on the default branch.

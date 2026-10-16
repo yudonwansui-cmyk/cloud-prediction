@@ -1,0 +1,26 @@
+channel_index,channel_name,channel_role,base_feature_name,physical_group,channel_unit,base_unit
+0,shading_ratio,value,shading_ratio,G3,standardized,dimensionless
+1,shadow_ratio_dt,value,shadow_ratio_dt,G3,standardized,s^-1
+2,newly_shaded_ratio,value,newly_shaded_ratio,G3,standardized,dimensionless
+3,newly_recovered_ratio,value,newly_recovered_ratio,G3,standardized,dimensionless
+4,P_rec,value,P_rec,G4,standardized,kW
+5,P_loss,value,P_loss,G4,standardized,dimensionless
+6,afd_violation_ratio,value,afd_violation_ratio,G6,standardized,dimensionless
+7,q_max,value,q_max,G5,standardized,kW m^-2
+8,panel_q_std_max,value,panel_q_std_max,G5,standardized,kW m^-2
+9,frame_panel_q_mean_dt_abs_max,value,frame_panel_q_mean_dt_abs_max,G7,standardized,kW m^-2 s^-1
+10,frame_panel_q_mean_dt_positive_max,value,frame_panel_q_mean_dt_positive_max,G7,standardized,kW m^-2 s^-1
+11,frame_panel_q_mean_dt_negative_magnitude_max,value,frame_panel_q_mean_dt_negative_magnitude_max,G7,standardized,kW m^-2 s^-1
+12,shading_ratio__missing,missing_indicator,shading_ratio,G3,indicator,dimensionless
+13,shadow_ratio_dt__missing,missing_indicator,shadow_ratio_dt,G3,indicator,s^-1
+14,newly_shaded_ratio__missing,missing_indicator,newly_shaded_ratio,G3,indicator,dimensionless
+15,newly_recovered_ratio__missing,missing_indicator,newly_recovered_ratio,G3,indicator,dimensionless
+16,P_rec__missing,missing_indicator,P_rec,G4,indicator,kW
+17,P_loss__missing,missing_indicator,P_loss,G4,indicator,dimensionless
+18,afd_violation_ratio__missing,missing_indicator,afd_violation_ratio,G6,indicator,dimensionless
+19,q_max__missing,missing_indicator,q_max,G5,indicator,kW m^-2
+20,panel_q_std_max__missing,missing_indicator,panel_q_std_max,G5,indicator,kW m^-2
+21,frame_panel_q_mean_dt_abs_max__missing,missing_indicator,frame_panel_q_mean_dt_abs_max,G7,indicator,kW m^-2 s^-1
+22,frame_panel_q_mean_dt_positive_max__missing,missing_indicator,frame_panel_q_mean_dt_positive_max,G7,indicator,kW m^-2 s^-1
+23,frame_panel_q_mean_dt_negative_magnitude_max__missing,missing_indicator,frame_panel_q_mean_dt_negative_magnitude_max,G7,indicator,kW m^-2 s^-1
+24,observed_time_mask,observed_time_mask,,,indicator,

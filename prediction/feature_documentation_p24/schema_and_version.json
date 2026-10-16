@@ -1,15 +1,64 @@
 {
-  "schema_version": "1.0.0-public",
-  "build_time_utc": "2026-10-13T05:40:42.448459+00:00",
-  "frozen_registry_sha256": "8b02df9fb381dbd3956339acca11b6fe923e9c886fd820abb0b1802c8dae6fe4",
-  "feature_dictionary_sha256": "b5beebb2b961559fe253c19061b551502b65eb684e6423e5600b26cde6e2d1bc",
+  "schema_version": "1.1.0",
+  "build_time_utc": "2026-10-16T07:23:42.815747+00:00",
+  "feature_dictionary_sha256": "dac305a3efaf717ad9ed92efb1989e36848696d41011d64a4afdc5198cb54f59",
   "feature_count": 106,
-  "evidence_status_counts": {
-    "VERIFIED": 106
-  },
   "publication_status": "PUBLIC_GITHUB_REPOSITORY",
   "repository_url": "https://github.com/yudonwansui-cmyk/cloud-prediction",
   "rights_status": "ALL_RIGHTS_RESERVED",
-  "upstream_static_classification_clouds": 1013,
-  "upstream_static_classification_used_test_covariates": true
+  "revision_scope": "English-only documentation; implementation provenance removed. Feature calculations and model inputs are unchanged.",
+  "cohort_terminology": {
+    "development_cohort": {
+      "cloud_count": 810,
+      "label_en": "development cohort"
+    },
+    "descriptive_evaluation_cohort": {
+      "cloud_count": 203,
+      "label_en": "descriptive evaluation cohort",
+      "previously_used_in_research": true
+    },
+    "full_cloud_cohort": {
+      "cloud_count": 1013,
+      "label_en": "full cloud cohort"
+    }
+  },
+  "cumulative_tier_counts": {
+    "T0": 8,
+    "T1": 12,
+    "T2": 20,
+    "T3": 101,
+    "T4": 106
+  },
+  "sequence_shape": [
+    11,
+    25
+  ],
+  "sequence_channel_index_base": 0,
+  "selected_input_scope": {
+    "repeat": 0,
+    "outer_folds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "endpoint_models": {
+      "E1": "M6",
+      "E2": "M5",
+      "E3": "M1-v2"
+    },
+    "final_development_refit": false
+  },
+  "feature_tier_counts": {
+    "A0": 8,
+    "A1": 4,
+    "A2": 8,
+    "A3": 81,
+    "A4": 5
+  },
+  "classification_population_clouds": 1013,
+  "classification_used_evaluation_covariates": true,
+  "documentation_language": "en",
+  "implementation_provenance_included": false
 }
