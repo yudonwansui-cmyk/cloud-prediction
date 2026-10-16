@@ -1,0 +1,10 @@
+# Keep the dictionary byte hash identical on Windows and Unix checkouts.
+prediction/feature_documentation_p24/feature_dictionary_p24_106.csv text eol=lf
+# Use consistent line endings for revised documentation and generated records.
+README.md text eol=lf
+prediction/feature_documentation_p24/*.md text eol=lf
+prediction/feature_documentation_p24/*.json text eol=lf
+prediction/feature_documentation_p24/selected_features_by_model_fold.csv text eol=lf
+prediction/feature_documentation_p24/sequence_channel_dictionary_25.csv text eol=lf
+prediction/feature_documentation_p24/validation/*.py text eol=lf
+prediction/feature_documentation_p24/validation/*.json text eol=lf
