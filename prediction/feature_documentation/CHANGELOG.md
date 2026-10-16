@@ -2,6 +2,7 @@
 
 ## 1.1.0 — 2026-10-16
 
+- Use protocol-neutral folder names, filenames, and documentation links.
 - Use English throughout the documentation, CSV files, metadata, and pull request description.
 - Remove Chinese description columns and notes.
 - Remove implementation paths, line references, registry references, audit labels, and the implementation trace file.

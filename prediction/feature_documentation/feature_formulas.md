@@ -1,4 +1,4 @@
-# P24 feature formulas
+# Feature formulas
 
 All 81 historical features are computed independently within each `(cloud_id, direction)` sequence. For anchor `t`, H20 = finite observations with `t-20 <= t_i <= t`. The current observation is included. A missing or infinite base value is excluded from the statistic; no finite observation leaves NaN.
 

@@ -25,8 +25,8 @@ def read_rows(root, name):
 
 
 def validate(root):
-    dictionary = read_rows(root, 'feature_dictionary_p24_106.csv')
-    groups = read_rows(root, 'feature_group_mapping_p24.csv')
+    dictionary = read_rows(root, 'feature_dictionary_106.csv')
+    groups = read_rows(root, 'feature_group_mapping.csv')
     excluded = read_rows(root, 'excluded_features.csv')
     channels = read_rows(root, 'sequence_channel_dictionary_25.csv')
     selections = read_rows(root, 'selected_features_by_model_fold.csv')
@@ -53,7 +53,7 @@ def validate(root):
     checks['history_formula_references'] = all(r['formula_id'] in formula_text for items in history.values() for r in items)
     checks['missingness_fields_present'] = all(r['raw_missing_rule'].strip() and r['imputation_rule'].strip() and 'raw_missing_rule' in r['missing_handling'] and 'imputation_rule' in r['missing_handling'] for r in dictionary)
     checks['excluded_only_sequence_time'] = len(excluded) == 1 and excluded[0]['feature_name'] == 'normalized_sequence_time' and 'normalized_sequence_time' not in names
-    checks['dictionary_sha256'] = hashlib.sha256((root / 'feature_dictionary_p24_106.csv').read_bytes()).hexdigest() == schema['feature_dictionary_sha256']
+    checks['dictionary_sha256'] = hashlib.sha256((root / 'feature_dictionary_106.csv').read_bytes()).hexdigest() == schema['feature_dictionary_sha256']
     checks['schema_counts'] = schema['feature_count'] == 106 and schema['feature_tier_counts'] == TIER_COUNTS and schema['cumulative_tier_counts'] == CUMULATIVE_COUNTS
     checks['cohort_metadata'] = {key: value['cloud_count'] for key, value in schema['cohort_terminology'].items()} == {'development_cohort': 810, 'descriptive_evaluation_cohort': 203, 'full_cloud_cohort': 1013} and schema['cohort_terminology']['descriptive_evaluation_cohort']['previously_used_in_research'] is True
     checks['classification_population'] = schema['classification_population_clouds'] == 1013 and schema['classification_used_evaluation_covariates'] is True

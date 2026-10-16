@@ -2,7 +2,7 @@
 
 **Version 1.1.0.**
 
-This package documents **106 candidate tabular predictors** for cloud-shadow short-horizon risk prediction using 20 s of causal history and a 6 s future onset horizon. P24 identifies the frozen prediction protocol.
+This package documents **106 candidate tabular predictors** for cloud-shadow short-horizon risk prediction using 20 s of causal history and a 6 s future onset horizon.
 
 ## Cohorts
 
@@ -54,8 +54,8 @@ The fold table records **repeat 0, folds 0–4**, for **E1/M6 (LSTM), E2/M5, and
 
 ## Files
 
-- [feature_dictionary_p24_106.csv](feature_dictionary_p24_106.csv): definitions, units, tiers, timing, formulas, and missingness.
-- [feature_group_mapping_p24.csv](feature_group_mapping_p24.csv): semantic groups.
+- [feature_dictionary_106.csv](feature_dictionary_106.csv): definitions, units, tiers, timing, formulas, and missingness.
+- [feature_group_mapping.csv](feature_group_mapping.csv): semantic groups.
 - [excluded_features.csv](excluded_features.csv): the excluded former candidate and its reason.
 - [feature_formulas.md](feature_formulas.md): calculations and preprocessing.
 - [sequence_input_11x25.md](sequence_input_11x25.md) and [sequence_channel_dictionary_25.csv](sequence_channel_dictionary_25.csv): temporal alignment and channels.
@@ -79,8 +79,8 @@ Area and edge-complexity cutoffs were calculated from all **1013** static cloud 
 
 ## Documentation link
 
-Use the [feature dictionary link](https://github.com/yudonwansui-cmyk/cloud-prediction/tree/main/prediction/feature_documentation_p24) directly in the manuscript:
+Use the [feature dictionary link](https://github.com/yudonwansui-cmyk/cloud-prediction/tree/main/prediction/feature_documentation) directly in the manuscript:
 
-> The candidate feature dictionary and input specifications are available at [GitHub](https://github.com/yudonwansui-cmyk/cloud-prediction/tree/main/prediction/feature_documentation_p24).
+> The candidate feature dictionary and input specifications are available at [GitHub](https://github.com/yudonwansui-cmyk/cloud-prediction/tree/main/prediction/feature_documentation).
 
 The link points to the documentation on the default branch.
