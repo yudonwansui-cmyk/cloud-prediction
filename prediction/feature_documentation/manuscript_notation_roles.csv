@@ -1,0 +1,17 @@
+paper_symbol,search_aliases,role,manuscript_reference,related_feature_ids,relationship
+q_j,qj;q_j,upstream_cell_field,Section 3.4 Eq. (5); Section 3.6 Eq. (10),F013;F015;F016;F017,Cell flux is aggregated into power and flux descriptors and compared with the AFD control limit; the full cell field is not a scalar registered candidate.
+bar_q_g,qbar_g;bar_q_g,upstream_subregion_field,Section 4.1 Eq. (13),F018;F019;F020;F021;F022;F023;F024;F025,Subregion mean fluxes are differenced before deriving registered rate summaries and peak-location IDs.
+dot_q_g,qdot_g;dot_q_g,upstream_subregion_rate,Section 4.1 Eq. (13),F018;F019;F020;F021;F022;F023;F024;F025,Signed rate vector over 126 subregions; Rrec is its maximum positive part and other candidates summarize its distribution or peak IDs.
+P_clear,Pclear;P_clear,normalization_reference,Section 4.1 Eq. (12),F014,Clear-sky reference power is used to construct P_loss; it is not a separately registered predictor.
+q_AFD_ctrl,qAFDctrl;q_AFD_ctrl,physical_control_limit,Section 3.6 Eqs. (9)-(10),F015,Cell-level physical AFD control limit used to construct afd_violation_ratio; distinct from the statistical E1 event threshold.
+R_j,Rj;R_j,upstream_cell_utilization,Section 3.6 Eq. (10),F015,Cell utilization q_j divided by q_AFD_ctrl_j; its exceedance fraction is afd_violation_ratio. R_j is distinct from Rrec.
+w_i,wi;w_i,upstream_heliostat_activity,Section 3.3 Eq. (4); Section 3.4 Eq. (5),F009;F013,Activity vector determines aggregate shading and flux reconstruction; individual heliostat states are not separate scalar registry fields.
+L,L;flux_library,simulation_library,Section 3.4 Eq. (5),F013;F015;F016;F017,Fixed per-heliostat optical flux library used upstream of receiver features; not a registered predictor.
+Delta_t_n,dt;Delta_t_n,time_coordinate,Section 4.1 Eqs. (11) and (13),F010;F018;F019;F020;F021;F022,Recorded time separation supplies rate denominators; it is not a separately registered predictor.
+theta_r,theta;theta_r,event_label_parameter,Section 4.1 Eq. (15),F014;F015;F019,Statistical thresholds applied to physical indicators to construct event states; threshold parameters are not predictors.
+I_r,Ir;I_r,event_threshold_state,Section 4.1 Eq. (15); Section 4.2,F014;F015;F019,Raw threshold states determine episode construction and online anchor eligibility; they are not registered candidate inputs.
+y_E1,yE1;y_E1,future_onset_label,Section 4.1 Eq. (16),F015,Future AFD recurrence target assigned offline; never used as a causal input.
+y_E2,yE2;y_E2,future_onset_label,Section 4.1 Eq. (17),F019,Future positive-flux-ramp onset target assigned offline; never used as a causal input.
+y_E3,yE3;y_E3,future_onset_label,Section 4.1 Eq. (18),F014,Future high-power-loss onset target assigned offline; never used as a causal input.
+x_stat,xstat;x_stat,input_representation,Section 4.3,,Tabular representation assembled from retained registered candidates; not an additional feature.
+X_seq,Xseq;X_seq,input_representation,Section 4.3 Eq. (19),,Separate 11 x 25 tensor of 12 values plus 12 missing indicators and one observed-time mask; not 25 additional tabular candidates.
